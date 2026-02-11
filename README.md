@@ -4,7 +4,7 @@
 [![Platform](https://img.shields.io/badge/Platform-AX650N%20NPU-blue)]()
 [![Language](https://img.shields.io/badge/Language-Russian%20%7C%20English%20%7C%20Chinese-green)]()
 
-**[Русская версия (README_RU.md)](README_RU.md)**
+**[Русский](README_RU.md)** | **[中文](README_ZH.md)**
 
 Run CosyVoice3 text-to-speech with **Russian voice cloning** on edge NPU hardware (AXERA AX650N / FriendlyElec CM3588).
 

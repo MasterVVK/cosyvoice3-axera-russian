@@ -4,7 +4,7 @@
 [![Platform](https://img.shields.io/badge/Platform-AX650N%20NPU-blue)]()
 [![Language](https://img.shields.io/badge/Language-Russian%20%7C%20English%20%7C%20Chinese-green)]()
 
-**[English version (README.md)](README.md)**
+**[English](README.md)** | **[中文](README_ZH.md)**
 
 Синтез речи CosyVoice3 с **клонированием русского голоса** на edge-NPU (AXERA AX650N / FriendlyElec CM3588).
 
