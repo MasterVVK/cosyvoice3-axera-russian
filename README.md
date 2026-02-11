@@ -29,11 +29,11 @@ Text → [Tokenizer HTTP] → [LLM NPU] → [Flow NPU] → [HiFT NPU] → [PostP
 ## Hardware Setup
 
 Our setup uses:
-- **FriendlyElec CM3588** NAS Kit (RK3588 SoC)
-- **[M5Stack Module LLM](https://shop.m5stack.com/)** (AX650N) — M.2 M-Key NPU accelerator card inserted into CM3588's M.2 slot
-- **[JEYI Finscold Q150](https://www.jeyi.com/)** — passive copper heatsink for M.2 2280 (50 copper fins, 401 W/mK) mounted on the Module LLM for cooling
+- **[FriendlyElec CM3588](https://wiki.friendlyelec.com/wiki/index.php/CM3588)** NAS Kit (RK3588 SoC)
+- **[M5Stack Module LLM (AI-8850)](https://docs.m5stack.com/en/guide/ai_accelerator/llm-8850/m5_llm_8850_software_install)** — M.2 M-Key NPU accelerator card inserted into CM3588's M.2 slot
+- **[JEYI Finscold Q150](https://www.jeyi.com/products/jeyi-m-2-2280-ssd-high-performance-heatsink-copper-fins-with-aluminum-frame-passive-heat-sinks-50pcs-fins-cold-401-w-mk)** — passive copper heatsink for M.2 2280 (50 copper fins, 401 W/mK) mounted on the Module LLM for cooling
 
-The JEYI Q150 keeps the AX650N at 63°C idle / 71°C peak under full NPU load — well within safe operating range without any active fan.
+The JEYI Q150 keeps the NPU at 63°C idle / 71°C peak under full load — well within safe operating range without any active fan.
 
 > Any board with an M.2 M-Key slot and PCIe support can work: CM3588, Raspberry Pi 5, RK3588-based SBCs, x86 PCs with AXCL support.
 
@@ -41,8 +41,8 @@ The JEYI Q150 keeps the AX650N at 63°C idle / 71°C peak under full NPU load �
 
 ### Prerequisites
 
-- **Hardware**: CM3588 + M5Stack Module LLM (AX650N) in M.2 slot (or AX650N demo board / M4N-Dock)
-- **Cooling**: JEYI Finscold Q150 or similar M.2 passive heatsink (recommended)
+- **Hardware**: [CM3588](https://wiki.friendlyelec.com/wiki/index.php/CM3588) + [M5Stack Module LLM (AI-8850)](https://docs.m5stack.com/en/guide/ai_accelerator/llm-8850/m5_llm_8850_software_install) in M.2 slot (or AX650N demo board / M4N-Dock)
+- **Cooling**: [JEYI Finscold Q150](https://www.jeyi.com/products/jeyi-m-2-2280-ssd-high-performance-heatsink-copper-fins-with-aluminum-frame-passive-heat-sinks-50pcs-fins-cold-401-w-mk) or similar M.2 passive heatsink (recommended)
 - **Runtime**: AXCL runtime 3.6+ installed
 - **Python**: 3.8+ with `transformers`, `scipy`, `numpy`
 - **Models**: Downloaded from [AXERA-TECH/CosyVoice3](https://huggingface.co/AXERA-TECH/CosyVoice3)
@@ -199,8 +199,9 @@ Models and binaries are **not included** — download from:
 ## Credits
 
 - [FunAudioLLM / Alibaba](https://github.com/FunAudioLLM/CosyVoice) — CosyVoice3 model
-- [AXERA-TECH](https://github.com/AXERA-TECH) — AX650N NPU quantization, runtime, and pre-built binaries
-- [FriendlyElec](https://www.friendlyelec.com/) — CM3588 hardware
+- [AXERA-TECH](https://github.com/AXERA-TECH) — NPU quantization, runtime, and pre-built binaries
+- [M5Stack](https://shop.m5stack.com/) — Module LLM (AI-8850) M.2 NPU accelerator
+- [FriendlyElec](https://wiki.friendlyelec.com/wiki/index.php/CM3588) — CM3588 NAS Kit
 
 ## License
 

@@ -29,11 +29,11 @@
 ## Железо
 
 Наша конфигурация:
-- **FriendlyElec CM3588** NAS Kit (RK3588 SoC)
-- **[M5Stack Module LLM](https://shop.m5stack.com/)** (AX650N) — M.2 M-Key NPU ускоритель, вставляется в M.2 слот CM3588
-- **[JEYI Finscold Q150](https://www.jeyi.com/)** — пассивный медный радиатор для M.2 2280 (50 медных рёбер, 401 Вт/мК), установлен на Module LLM
+- **[FriendlyElec CM3588](https://wiki.friendlyelec.com/wiki/index.php/CM3588)** NAS Kit (RK3588 SoC)
+- **[M5Stack Module LLM (AI-8850)](https://docs.m5stack.com/en/guide/ai_accelerator/llm-8850/m5_llm_8850_software_install)** — M.2 M-Key NPU ускоритель, вставляется в M.2 слот CM3588
+- **[JEYI Finscold Q150](https://www.jeyi.com/products/jeyi-m-2-2280-ssd-high-performance-heatsink-copper-fins-with-aluminum-frame-passive-heat-sinks-50pcs-fins-cold-401-w-mk)** — пассивный медный радиатор для M.2 2280 (50 медных рёбер, 401 Вт/мК), установлен на Module LLM
 
-JEYI Q150 держит AX650N на 63°C в простое / 71°C при полной нагрузке NPU — без активного охлаждения.
+JEYI Q150 держит NPU на 63°C в простое / 71°C при полной нагрузке — без активного охлаждения.
 
 > Подойдёт любая плата с M.2 M-Key слотом и PCIe: CM3588, Raspberry Pi 5, SBC на RK3588, x86 ПК с поддержкой AXCL.
 
@@ -41,8 +41,8 @@ JEYI Q150 держит AX650N на 63°C в простое / 71°C при пол
 
 ### Требования
 
-- **Железо**: CM3588 + M5Stack Module LLM (AX650N) в M.2 слоте (или AX650N demo board / M4N-Dock)
-- **Охлаждение**: JEYI Finscold Q150 или аналогичный M.2 радиатор (рекомендуется)
+- **Железо**: [CM3588](https://wiki.friendlyelec.com/wiki/index.php/CM3588) + [M5Stack Module LLM (AI-8850)](https://docs.m5stack.com/en/guide/ai_accelerator/llm-8850/m5_llm_8850_software_install) в M.2 слоте (или AX650N demo board / M4N-Dock)
+- **Охлаждение**: [JEYI Finscold Q150](https://www.jeyi.com/products/jeyi-m-2-2280-ssd-high-performance-heatsink-copper-fins-with-aluminum-frame-passive-heat-sinks-50pcs-fins-cold-401-w-mk) или аналогичный M.2 радиатор (рекомендуется)
 - **Runtime**: AXCL runtime 3.6+
 - **Python**: 3.8+ с `transformers`, `scipy`, `numpy`
 - **Модели**: скачать с [AXERA-TECH/CosyVoice3](https://huggingface.co/AXERA-TECH/CosyVoice3)
@@ -153,8 +153,9 @@ CM3588 + AX650N (PCIe Gen3 x1), AXCL 3.6.5:
 ## Благодарности
 
 - [FunAudioLLM / Alibaba](https://github.com/FunAudioLLM/CosyVoice) — модель CosyVoice3
-- [AXERA-TECH](https://github.com/AXERA-TECH) — квантизация, runtime, бинарники для AX650N
-- [FriendlyElec](https://www.friendlyelec.com/) — железо CM3588
+- [AXERA-TECH](https://github.com/AXERA-TECH) — квантизация, runtime, бинарники для NPU
+- [M5Stack](https://shop.m5stack.com/) — Module LLM (AI-8850) M.2 NPU ускоритель
+- [FriendlyElec](https://wiki.friendlyelec.com/wiki/index.php/CM3588) — CM3588 NAS Kit
 
 ## Лицензия
 

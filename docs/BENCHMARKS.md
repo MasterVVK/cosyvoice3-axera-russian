@@ -4,9 +4,9 @@ Performance measurements for CosyVoice3 on CM3588 + AX650N NPU.
 
 ## Test Setup
 
-- **Board**: FriendlyElec CM3588 NAS Kit (RK3588 SoC)
-- **NPU**: M5Stack Module LLM (AX650N) via M.2 PCIe Gen3 x1
-- **Cooling**: JEYI Finscold Q150 passive copper heatsink (no fan)
+- **Board**: [FriendlyElec CM3588](https://wiki.friendlyelec.com/wiki/index.php/CM3588) NAS Kit (RK3588 SoC)
+- **NPU**: [M5Stack Module LLM (AI-8850)](https://docs.m5stack.com/en/guide/ai_accelerator/llm-8850/m5_llm_8850_software_install) via M.2 PCIe Gen3 x1
+- **Cooling**: [JEYI Finscold Q150](https://www.jeyi.com/products/jeyi-m-2-2280-ssd-high-performance-heatsink-copper-fins-with-aluminum-frame-passive-heat-sinks-50pcs-fins-cold-401-w-mk) passive copper heatsink (no fan)
 - **AXCL Runtime**: v3.6.5
 - **Models**: CosyVoice-BlankEN-Ax650-C64-P256-CTX512 (w8a16, 24 layers)
 - **Voice prompt**: prompt_files_russian_v2 (Russian, 99 speech tokens)

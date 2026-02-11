@@ -4,13 +4,13 @@ Step-by-step installation of CosyVoice3 Russian TTS on CM3588 + AX650N.
 
 ## Hardware Requirements
 
-- **FriendlyElec CM3588** NAS Kit (or any board with M.2 M-Key PCIe slot)
-- **[M5Stack Module LLM](https://shop.m5stack.com/)** (AX650N) — M.2 M-Key NPU accelerator card
+- **[FriendlyElec CM3588](https://wiki.friendlyelec.com/wiki/index.php/CM3588)** NAS Kit (or any board with M.2 M-Key PCIe slot)
+- **[M5Stack Module LLM (AI-8850)](https://docs.m5stack.com/en/guide/ai_accelerator/llm-8850/m5_llm_8850_software_install)** — M.2 M-Key NPU accelerator card
   - Insert into CM3588's M.2 slot (PCIe Gen3 x1)
   - Also compatible with: M4N-Dock, AX650N demo board, Raspberry Pi 5, RK3588 SBCs
-- **[JEYI Finscold Q150](https://www.jeyi.com/)** — passive M.2 2280 copper heatsink (recommended)
+- **[JEYI Finscold Q150](https://www.jeyi.com/products/jeyi-m-2-2280-ssd-high-performance-heatsink-copper-fins-with-aluminum-frame-passive-heat-sinks-50pcs-fins-cold-401-w-mk)** — passive M.2 2280 copper heatsink (recommended)
   - 50 copper fins, 401 W/mK thermal conductivity
-  - Keeps AX650N at 63°C idle / 71°C peak without active cooling
+  - Keeps NPU at 63°C idle / 71°C peak without active cooling
   - Any M.2 heatsink will work, but the Q150 fits the Module LLM form factor well
 - **Storage**: ~3 GB for models + binaries
 - **RAM**: 4 GB+ system RAM (NPU has its own 7 GB CMM)
