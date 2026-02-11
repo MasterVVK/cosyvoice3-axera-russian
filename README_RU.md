@@ -26,11 +26,23 @@
            EOS=1773          24 слоя     ODE steps     вокодер      LP 5kHz фильтр
 ```
 
+## Железо
+
+Наша конфигурация:
+- **FriendlyElec CM3588** NAS Kit (RK3588 SoC)
+- **[M5Stack Module LLM](https://shop.m5stack.com/)** (AX650N) — M.2 M-Key NPU ускоритель, вставляется в M.2 слот CM3588
+- **[JEYI Finscold Q150](https://www.jeyi.com/)** — пассивный медный радиатор для M.2 2280 (50 медных рёбер, 401 Вт/мК), установлен на Module LLM
+
+JEYI Q150 держит AX650N на 63°C в простое / 71°C при полной нагрузке NPU — без активного охлаждения.
+
+> Подойдёт любая плата с M.2 M-Key слотом и PCIe: CM3588, Raspberry Pi 5, SBC на RK3588, x86 ПК с поддержкой AXCL.
+
 ## Быстрый старт
 
 ### Требования
 
-- **Железо**: CM3588 с AX650N M.2 ускорителем (или AX650N demo board / M4N-Dock)
+- **Железо**: CM3588 + M5Stack Module LLM (AX650N) в M.2 слоте (или AX650N demo board / M4N-Dock)
+- **Охлаждение**: JEYI Finscold Q150 или аналогичный M.2 радиатор (рекомендуется)
 - **Runtime**: AXCL runtime 3.6+
 - **Python**: 3.8+ с `transformers`, `scipy`, `numpy`
 - **Модели**: скачать с [AXERA-TECH/CosyVoice3](https://huggingface.co/AXERA-TECH/CosyVoice3)

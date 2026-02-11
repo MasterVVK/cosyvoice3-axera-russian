@@ -4,8 +4,9 @@ Performance measurements for CosyVoice3 on CM3588 + AX650N NPU.
 
 ## Test Setup
 
-- **Board**: FriendlyElec CM3588 NAS Kit
-- **NPU**: AXERA AX650N via M.2 PCIe Gen3 x1
+- **Board**: FriendlyElec CM3588 NAS Kit (RK3588 SoC)
+- **NPU**: M5Stack Module LLM (AX650N) via M.2 PCIe Gen3 x1
+- **Cooling**: JEYI Finscold Q150 passive copper heatsink (no fan)
 - **AXCL Runtime**: v3.6.5
 - **Models**: CosyVoice-BlankEN-Ax650-C64-P256-CTX512 (w8a16, 24 layers)
 - **Voice prompt**: prompt_files_russian_v2 (Russian, 99 speech tokens)

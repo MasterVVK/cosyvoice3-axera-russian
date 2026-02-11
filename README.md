@@ -26,11 +26,23 @@ Text → [Tokenizer HTTP] → [LLM NPU] → [Flow NPU] → [HiFT NPU] → [PostP
          EOS=1773          24 layers    ODE steps     vocoder      LP 5kHz filter
 ```
 
+## Hardware Setup
+
+Our setup uses:
+- **FriendlyElec CM3588** NAS Kit (RK3588 SoC)
+- **[M5Stack Module LLM](https://shop.m5stack.com/)** (AX650N) — M.2 M-Key NPU accelerator card inserted into CM3588's M.2 slot
+- **[JEYI Finscold Q150](https://www.jeyi.com/)** — passive copper heatsink for M.2 2280 (50 copper fins, 401 W/mK) mounted on the Module LLM for cooling
+
+The JEYI Q150 keeps the AX650N at 63°C idle / 71°C peak under full NPU load — well within safe operating range without any active fan.
+
+> Any board with an M.2 M-Key slot and PCIe support can work: CM3588, Raspberry Pi 5, RK3588-based SBCs, x86 PCs with AXCL support.
+
 ## Quick Start
 
 ### Prerequisites
 
-- **Hardware**: CM3588 with AX650N M.2 accelerator (or AX650N demo board / M4N-Dock)
+- **Hardware**: CM3588 + M5Stack Module LLM (AX650N) in M.2 slot (or AX650N demo board / M4N-Dock)
+- **Cooling**: JEYI Finscold Q150 or similar M.2 passive heatsink (recommended)
 - **Runtime**: AXCL runtime 3.6+ installed
 - **Python**: 3.8+ with `transformers`, `scipy`, `numpy`
 - **Models**: Downloaded from [AXERA-TECH/CosyVoice3](https://huggingface.co/AXERA-TECH/CosyVoice3)
