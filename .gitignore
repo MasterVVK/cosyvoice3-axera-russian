@@ -1,0 +1,38 @@
+# Build artifacts
+*.o
+*.so
+*.a
+build/
+install/
+__pycache__/
+*.pyc
+
+# Audio test files
+*.wav
+
+# Backup files
+*.bak
+*.orig
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Model files (too large for git)
+*.onnx
+*.axmodel
+*.gguf
+*.rknn
+*.bin
+*.npy
+
+# Logs
+*.log
+
+# Temporary
+/tmp/

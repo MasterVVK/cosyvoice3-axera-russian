@@ -1,0 +1,24 @@
+[Unit]
+Description=CosyVoice3 RKLLM Token Server (RK3588 NPU)
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/rm -f /tmp/cv3_tokens.sock
+ExecStart=/usr/bin/python3 /root/cosyvoice3-build/dual_npu/rkllm_token_server.py \
+    --model /root/cosyvoice3-rknn/cosyvoice3_llm_rk3588.rkllm \
+    --embeddings /root/cosyvoice3-rknn/cosyvoice3_embeddings \
+    --tokenizer /root/cosyvoice3-rknn/cosyvoice3_qwen2_for_rkllm \
+    --socket /tmp/cv3_tokens.sock \
+    --temperature 0.6 \
+    --top_k 15
+ExecStop=/bin/kill -TERM $MAINPID
+Restart=on-failure
+RestartSec=5
+TimeoutStartSec=120
+WorkingDirectory=/root/cosyvoice3-build/dual_npu
+Environment=PYTHONPATH=/root/cosyvoice3-rknn
+
+[Install]
+WantedBy=multi-user.target

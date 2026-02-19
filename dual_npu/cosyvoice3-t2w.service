@@ -1,0 +1,26 @@
+[Unit]
+Description=CosyVoice3 Token2Wav Daemon (AX650N NPU)
+After=cosyvoice3-rkllm.service
+Wants=cosyvoice3-rkllm.service
+
+[Service]
+Type=simple
+ExecStartPre=/bin/rm -f /tmp/cv3_tts.sock
+ExecStart=/root/cosyvoice3-build/cosyvoice3-axera/cpp/build/install/bin/cosyvoice3_tts \
+    --text "" \
+    --token2wav_axmodel_dir /root/cosyvoice3-build/cosyvoice3-axera/models \
+    --prompt_files /root/cosyvoice3-build/cosyvoice3-axera/models/prompt_files \
+    --n_timesteps 5 \
+    --devices "0," \
+    --filename_decoder_weight /root/cosyvoice3-build/cosyvoice3-axera/models/decoder_weight.bin \
+    --external_tokens /tmp/cv3_tokens.sock \
+    --daemon /tmp/cv3_tts.sock \
+    --continue 0
+ExecStop=/bin/kill -TERM $MAINPID
+Restart=on-failure
+RestartSec=5
+TimeoutStartSec=120
+WorkingDirectory=/root/cosyvoice3-build
+
+[Install]
+WantedBy=multi-user.target
